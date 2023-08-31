@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
+
+
+// components
+import Goals from './components/Goals';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main-container'>
+      <Fragment>
+        <div className="goals-container">
+          <Goals />
+        </div>
+      </Fragment>
+      
+      <Fragment>
+        <div className="other-container">
+          <h1>Other Stuff</h1>
+        </div>
+      </Fragment>
+      
+      <Fragment>
+        <div className="more-other-container">
+          <h1>Hopefully More Stuff</h1>
+        </div>
+      </Fragment>
     </div>
   );
 }
