@@ -12,13 +12,10 @@ app.use(express.json()); // gives access to req.body (request.body) to get json 
 // ROUTES
 
 // goals routes
-
 // create a goal
-
 app.post("/goals", async (req, res) => {
   try {
     console.log(req.body);
-    
     const {description} = req.body; // what is coming from client side.
 
     const newGoal = await pool.query(
@@ -34,7 +31,6 @@ app.post("/goals", async (req, res) => {
 // get all goals
 app.get("/goals", async (req, res) => {
   try {
-    // console.log(req.body);
     const allGoals = await pool.query(
       "SELECT * FROM goals"
     );
@@ -45,10 +41,9 @@ app.get("/goals", async (req, res) => {
   }
 });
 
-// get a goals
+// get a goal
 app.get("/goals/:id", async (req, res) => {
   try {
-    // console.log(req.params);
     const { id } = req.params;
     const goal = await pool.query(
       "SELECT * FROM goals WHERE goal_id = $1", [id]
@@ -88,8 +83,6 @@ app.delete("/goals/:id", async (req, res) => {
     console.error(err.message)
   }
 });
-
-
 
 // Port that server listens to
 app.listen(5000, () => {
