@@ -14,7 +14,8 @@ const EditGoal = ({ goal }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       })
-      window.location = "/";
+      window.location = "/Goals";
+
     } catch (err) {
       console.error(err.message)
     }
