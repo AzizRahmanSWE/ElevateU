@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 // components
-// import Goals from './components/Goals';
 import Home from './pages/Home';
 import About from './pages/About';
+import Goals from './pages/Goals';
+import SearchExercises from './pages/Exercises';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/About" element={<About />} />
       <Route path="/Home" element={<Home />} />
+      <Route path="/Goals" element={<Goals />} />
+      <Route path="/SearchExercises" element={<SearchExercises />} />
     </Routes>
   )
 }
