@@ -1,9 +1,12 @@
 import React from 'react'
+import { Box } from '@mui/material';
 import SearchExercises from '../components/exerciseDemos/SearchExercises'
 
 const Exercises = () => {
   return (
-    <SearchExercises />
+    <Box>
+      <SearchExercises />
+    </Box>
   )
 }
 
