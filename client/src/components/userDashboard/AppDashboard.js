@@ -1,11 +1,11 @@
-import { colourModeContext, useMode } from "./theme";
+import { colorModeContext, useMode } from "../../theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import topBar from "./pages/user_dashboard/topBar";
 
 function App() {
   const [theme, colourMode] = useMode();
   return (
-    <colourModeContext.Provider value={colourMode}>
+    <colorModeContext.Provider value={colourMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
@@ -14,7 +14,7 @@ function App() {
           </main>
         </div>
       </ThemeProvider>
-    </colourModeContext.Provider>
+    </colorModeContext.Provider>
   );
 }
 
