@@ -15,10 +15,9 @@ const HeroBanner = () => {
         Fitness Club
       </Typography>
       <Typography>
-        Aziz, Tony, <br />
-        Jeremy
+        Take Control Of Your Body <br />
+        Elevate Your Health
       </Typography>
-      <Typography>Check out the most effective exercises</Typography>
     </Box>
   );
 };

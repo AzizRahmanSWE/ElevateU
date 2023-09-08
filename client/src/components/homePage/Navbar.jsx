@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 
-import Logo from "../assets/images/Logo.png";
+import Logo from "../../assets/images/Logo.png";
 
 const Navbar = () => {
   return (
@@ -28,7 +28,7 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="logo"
-          style={{ width: "48px", height: "48", margin: "0 20px" }}
+          style={{ width: "110px", height: "100px", margin: "" }}
         />
       </Link>
       <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
@@ -46,7 +46,11 @@ const Navbar = () => {
           href="exercises"
           style={{ textDecoration: "none", color: "#3A1212" }}
         >
-          Exercises
+          Workout Presets
+        </a>
+
+        <a href="login" style={{ textDecoration: "none", color: "#3A1212" }}>
+          Log In
         </a>
       </Stack>
     </Stack>
