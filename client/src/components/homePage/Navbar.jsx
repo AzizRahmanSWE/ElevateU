@@ -37,21 +37,46 @@ const Navbar = () => {
           style={{
             textDecoration: "none",
             color: "#3A1212",
-            borderBottom: "3px solid #FF2625",
+            borderBottom: "none",
+            transition: "border-bottom",
+            paddingBottom: "2px"
           }}
+          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
+          onMouseOut={(e) => e.target.style.borderBottom = "none"}
         >
           Home
         </Link>
-        <a
+        <Link
+          to="/workoutPresets"
           href="exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
+          style={{
+            textDecoration: "none",
+            color: "#3A1212",
+            borderBottom: "none",
+            transition: "border-bottom",
+            paddingBottom: "2px"
+          }}
+          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
+          onMouseOut={(e) => e.target.style.borderBottom = "none"}
         >
           Workout Presets
-        </a>
+        </Link>
 
-        <a href="login" style={{ textDecoration: "none", color: "#3A1212" }}>
+        <Link
+          to="/login"
+          href="login" 
+          style={{
+            textDecoration: "none",
+            color: "#3A1212",
+            borderBottom: "none",
+            transition: "border-bottom",
+            paddingBottom: "2px"
+          }}
+          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
+          onMouseOut={(e) => e.target.style.borderBottom = "none"}
+        >
           Log In
-        </a>
+        </Link>
       </Stack>
     </Stack>
   );
