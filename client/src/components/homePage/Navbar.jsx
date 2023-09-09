@@ -10,17 +10,9 @@ const Navbar = () => {
       direction="row"
       justifyContent="space-around"
       sx={{
-        gap: {
-          sm: "122px",
-          xs: "40px",
-        },
-
-        mt: {
-          sm: "32px",
-          xs: "20px",
-        },
-
-        justifyConent: "none",
+        gap: { sm: "123px", xs: "40px" },
+        mt: { sm: "32px", xs: "20px" },
+        justifyContent: "none",
       }}
       px="20px"
     >
@@ -28,10 +20,16 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="logo"
-          style={{ width: "110px", height: "100px", margin: "" }}
+          style={{ width: "120px", height: "120px", margin: "0 10px 0px 0" }}
         />
       </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack
+        direction="row"
+        gap="40px"
+        fontFamily="Alegreya"
+        fontSize="24px"
+        alignItems="flex-end"
+      >
         <Link
           to="/"
           style={{
@@ -39,10 +37,12 @@ const Navbar = () => {
             color: "#3A1212",
             borderBottom: "none",
             transition: "border-bottom",
-            paddingBottom: "2px"
+            paddingBottom: "2px",
           }}
-          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
-          onMouseOut={(e) => e.target.style.borderBottom = "none"}
+          onMouseOver={(e) =>
+            (e.target.style.borderBottom = "5px solid #FF2625")
+          }
+          onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Home
         </Link>
@@ -54,26 +54,30 @@ const Navbar = () => {
             color: "#3A1212",
             borderBottom: "none",
             transition: "border-bottom",
-            paddingBottom: "2px"
+            paddingBottom: "2px",
           }}
-          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
-          onMouseOut={(e) => e.target.style.borderBottom = "none"}
+          onMouseOver={(e) =>
+            (e.target.style.borderBottom = "5px solid #FF2625")
+          }
+          onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Workout Presets
         </Link>
 
         <Link
           to="/login"
-          href="login" 
+          href="login"
           style={{
             textDecoration: "none",
             color: "#3A1212",
             borderBottom: "none",
             transition: "border-bottom",
-            paddingBottom: "2px"
+            paddingBottom: "2px",
           }}
-          onMouseOver={(e) => e.target.style.borderBottom = "5px solid #FF2625"}
-          onMouseOut={(e) => e.target.style.borderBottom = "none"}
+          onMouseOver={(e) =>
+            (e.target.style.borderBottom = "5px solid #FF2625")
+          }
+          onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Log In
         </Link>
