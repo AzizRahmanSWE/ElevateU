@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LoginForm from '/Login';
+import LoginForm from './loginForm.jsx';
 
 const LoginPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -8,9 +8,7 @@ import Home from "./pages/Home";
 import ExerciseDetails from "./pages/ExerciseDetails";
 import Navbar from "./components/homePage/Navbar";
 import Footer from "./components/homePage/Footer";
-/*import About from './pages/About';
-import Goals from './pages/Goals';
-import SearchExercises from './pages/Exercises';*/
+import LoginPage from "./components/login/loginPage";
 
 function App() {
   return (
@@ -26,8 +24,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/exercise/:id" element={<ExerciseDetails />} />
-        {/* <Route path="/about" element={<About />} /> */}
       </Routes>
       <Footer />
     </Box>
