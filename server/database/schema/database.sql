@@ -1,4 +1,11 @@
-CREATE DATABASE elavateu;
+-- CREATE DATABASE elavateu;
+
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS activities CASCADE;
+DROP TABLE IF EXISTS daily_logs CASCADE;
+DROP TABLE IF EXISTS workout_presets CASCADE;
+DROP TABLE IF EXISTS preset_activities CASCADE;
+
 
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
@@ -56,14 +63,14 @@ CREATE TABLE workout_presets (
   preset_name VARCHAR(255) NOT NULL,
   duration INTEGER,
   difficulty VARCHAR(50),
-  description TEXT
+  description VARCHAR(255)
 );
 
 CREATE TABLE preset_activities (
   preset_activity_id SERIAL PRIMARY KEY,
   workout_preset_id INTEGER REFERENCES workout_presets(workout_preset_id),
   activity_id INTEGER REFERENCES activities(activity_id),
-  day INTEGER,
+  day VARCHAR(10) NOT NULL,
   sets INTEGER,
   reps INTEGER,
   duration FLOAT

@@ -47,6 +47,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         sx={{ fontSize: { lg: '44px', xs: '30px' }}} 
         mb="49px" 
         textAlign="center"
+        color="#F2F2F2"
+        fontFamily="Open Sans"
       >
         Awsome Exercises You <br /> Should Know
       </Typography>
@@ -57,7 +59,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           sx={{ 
             input: { fontWeight: '700', border: 'none', borderRadius: '4px' }, width: { lg: '800px', xs: '350px' }, 
             backgroundColor: '#fff', 
-            borderRadius: '40px'
+            borderRadius: '10px'
           }}
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}

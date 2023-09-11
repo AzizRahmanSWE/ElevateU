@@ -5,9 +5,8 @@ import { Box } from "@mui/material";
 
 // components
 import Home from "./pages/Home";
-import ExerciseDetails from "./pages/ExerciseDetails";
+import ExerciseDetail from "./pages/ExerciseDetail";
 import Navbar from "./components/homePage/Navbar";
-import Footer from "./components/homePage/Footer";
 import LoginPage from "./components/login/loginPage";
 
 function App() {
@@ -25,9 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/exercise/:id" element={<ExerciseDetails />} />
+        <Route path="/exercise/:id" element={<ExerciseDetail />} />
       </Routes>
-      <Footer />
     </Box>
   );
 }
