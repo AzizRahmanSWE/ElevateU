@@ -19,7 +19,11 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="logo"
-          style={{ width: "150px", height: "50px", margin: " 0 0 10px 15px" }}
+          style={{
+            width: "150px",
+            height: "100px",
+            margin: "20px 0 10px 15px",
+          }}
         />
       </Link>
       <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
