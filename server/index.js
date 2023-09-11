@@ -41,6 +41,20 @@ app.get("/goals", async (req, res) => {
   }
 });
 
+
+// get workoutPreset
+app.get("/workout_preset/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const workoutPreset = await pool.query(
+      "SELECT * FROM preset_activities WHERE workout_preset_id = $1", [id]
+    );
+    res.json(workoutPreset.rows[0])
+  } catch (err) {
+    console.error(err.message)
+  }
+});
+
 // get a goal
 app.get("/goals/:id", async (req, res) => {
   try {
@@ -83,6 +97,7 @@ app.delete("/goals/:id", async (req, res) => {
     console.error(err.message)
   }
 });
+
 
 // Port that server listens to
 app.listen(5000, () => {
