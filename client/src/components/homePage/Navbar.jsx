@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 
-import Logo from "../../assets/images/Logo.png";
+import Logo from "../../assets/images/New Logo.png";
 
 const Navbar = () => {
   return (
@@ -10,8 +10,7 @@ const Navbar = () => {
       direction="row"
       justifyContent="space-around"
       sx={{
-        gap: { sm: "123px", xs: "40px" },
-        mt: { sm: "32px", xs: "20px" },
+        gap: { sm: "122px", xs: "40px" },
         justifyContent: "none",
       }}
       px="20px"
@@ -20,67 +19,55 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="logo"
-          style={{ width: "120px", height: "120px", margin: "0 10px 0px 0" }}
+          style={{ width: "150px", height: "50px", margin: " 0 0 10px 15px" }}
         />
       </Link>
-      <Stack
-        direction="row"
-        gap="40px"
-        fontFamily="Alegreya"
-        fontSize="24px"
-        alignItems="flex-end"
-      >
+      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
         <Link
           to="/"
           style={{
             textDecoration: "none",
-            color: "#3A1212",
-            borderBottom: "none",
-            transition: "border-bottom",
-            paddingBottom: "2px",
+            fontFamily: "Open Sans",
+            color: "#F2F2F2",
+            borderBottom: "3px solid #FF2625",
           }}
           onMouseOver={(e) =>
-            (e.target.style.borderBottom = "5px solid #FF2625")
+            (e.target.style.borderBottom = "2px inset #CDCDCD")
           }
           onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Home
         </Link>
-        <Link
+        <a
           to="/workoutPresets"
           href="exercises"
           style={{
             textDecoration: "none",
-            color: "#3A1212",
-            borderBottom: "none",
-            transition: "border-bottom",
-            paddingBottom: "2px",
+            fontFamily: "Open Sans",
+            color: "#F2F2F2",
           }}
           onMouseOver={(e) =>
-            (e.target.style.borderBottom = "5px solid #FF2625")
+            (e.target.style.borderBottom = "2px inset #CDCDCD")
           }
           onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Workout Presets
-        </Link>
-
-        <Link
+        </a>
+        <a
           to="/login"
           href="login"
           style={{
             textDecoration: "none",
-            color: "#3A1212",
-            borderBottom: "none",
-            transition: "border-bottom",
-            paddingBottom: "2px",
+            fontFamily: "Open Sans",
+            color: "#F2F2F2",
           }}
           onMouseOver={(e) =>
-            (e.target.style.borderBottom = "5px solid #FF2625")
+            (e.target.style.borderBottom = "2px inset #CDCDCD")
           }
           onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Log In
-        </Link>
+        </a>
       </Stack>
     </Stack>
   );

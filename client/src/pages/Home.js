@@ -8,12 +8,12 @@ import HeroBanner from "../components/homePage/HeroBanner";
 const Home = () => {
   const [bodyPart, setBodyPart] = useState("all");
   const [exercises, setExercises] = useState([]);
-  
+
   return (
     <Box>
       <HeroBanner />
-      {/* can be passed with useContext api */}
-      <SearchExercises
+
+      {/*<SearchExercises
         setExercises={setExercises}
         bodyPart={bodyPart}
         setBodyPart={setBodyPart}
@@ -22,7 +22,7 @@ const Home = () => {
         exercises={exercises}
         setExercises={setExercises}
         bodyPart={bodyPart}
-      />
+  />*/}
     </Box>
   );
 };

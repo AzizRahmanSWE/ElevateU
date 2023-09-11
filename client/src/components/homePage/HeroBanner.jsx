@@ -1,49 +1,70 @@
 import React from "react";
-import { Box, Stack, Typography, Button } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { Typography, Link, Grid } from "@mui/material";
 
-import Banner1 from "../../assets/images/Banner1.png";
+import Banner from "../../assets/images/Banner.png";
 
 const HeroBanner = () => {
   return (
-    <Box
-      sx={{ mt: { lg: "212px", xs: "70px" }, ml: { sm: "50px" } }}
+    <Grid
+      container
+      alignItems="center"
+      spacing={2}
+      direction="row"
+      mt={2}
+      mx={1}
+      /*sx={{
+        mt: { lg: "212px", xs: "70px" },
+        ml: { sm: "50px" },
+      }}*/
       position="relative"
-      p="10px"
+      p="20px"
     >
-      <Typography color="#FF2625" fontWeight="600" fontSize="26px">
-        Fitness Club
-      </Typography>
-      <Typography
-        fontWeight={700}
-        mb="23px"
-        mt="30px"
-        sx={{ fontSize: { lg: "35px", xs: "30px" } }}
-      >
-        Take Control Of Your Body <br />
-        Elevate Your Limit
-      </Typography>
-      {/* change the button href to "register" once registeration page is done */}
-      <Button variant="contained" href="login">
-        Sign Up
-      </Button>
-      <Typography
-        fontWeight={600}
-        color="#FF2625"
-        sx={{
-          opacity: "0.1",
-          display: { lg: "block", xs: "none" },
-          fontSize: "200px",
-        }}
-      >
-        Exercise
-      </Typography>
-      <img
-        src={Banner1}
-        alt="banner1"
-        className="banner-img"
-        style={{ width: "60%", height: "60%", margin: "0 10px 0px 0" }}
-      />
-    </Box>
+      <Grid item xs={12} lg={4}>
+        <Typography
+          variant="h4"
+          color="#F2F2F2"
+          fontWeight={700}
+          fontFamily="Open Sans"
+          sx={{ fontSize: { lg: "44px", xs: "40px" } }}
+        >
+          Control, Strive <br />
+          <span style={{ color: "#5AFE73" }}>Elavate</span> Your Limit
+        </Typography>
+        <Link
+          underline="none"
+          component={RouterLink}
+          to="/login"
+          sx={{
+            marginTop: "25px",
+            textDecoration: "none",
+            textAlign: "center",
+            width: "160px",
+            height: "40px",
+            textAlign: "center",
+            border: "2px solid #5AFE73",
+            background: "transparent",
+            padding: "2px",
+            textTransform: "none",
+            borderRadius: "20px",
+            fontSize: { lg: "15px", xs: "10px" },
+          }}
+          color="#F2F2F2"
+          fontWeight={700}
+          fontFamily="Open Sans"
+        >
+          Sign Up
+        </Link>
+      </Grid>
+      <Grid item xs={12} lg={8}>
+        <img
+          src={Banner}
+          alt="banner"
+          className="banner-img"
+          style={{ width: "100%", height: "100%" }}
+        />
+      </Grid>
+    </Grid>
   );
 };
 
