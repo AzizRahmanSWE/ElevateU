@@ -2,7 +2,7 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Typography, Link, Grid } from "@mui/material";
 
-import Banner from "../../assets/images/Banner_1.png";
+import Banner from "../../assets/images/Banner.png";
 
 const HeroBanner = () => {
   return (
