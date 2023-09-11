@@ -32,36 +32,36 @@ const HeroBanner = () => {
           <span style={{ color: "#5AFE73" }}>Elavate</span> Your Limit
         </Typography>
         <Link
-          underline="none"
+          //underline="none"
           component={RouterLink}
           to="/login"
           sx={{
-            marginTop: "25px",
+            marginTop: "200px",
             textDecoration: "none",
             textAlign: "center",
-            width: "160px",
-            height: "40px",
             textAlign: "center",
-            border: "2px solid #5AFE73",
+            border: "3px groove #5AFE73",
             background: "transparent",
-            padding: "2px",
+            padding: "7px",
             textTransform: "none",
-            borderRadius: "20px",
+            borderRadius: "200px",
             fontSize: { lg: "15px", xs: "10px" },
           }}
           color="#F2F2F2"
-          fontWeight={700}
+          fontWeight={100}
           fontFamily="Open Sans"
+          onMouseOver={(e) => (e.target.style.fontWeight = 1000)}
+          onMouseOut={(e) => (e.target.style.fontWeight = 100)}
         >
           Sign Up
         </Link>
       </Grid>
-      <Grid item xs={12} lg={8}>
+      <Grid item xs={12} lg={8} mt={3}>
         <img
           src={Banner}
           alt="banner"
           className="banner-img"
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "99%", height: "100%" }}
         />
       </Grid>
     </Grid>
