@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
 // components
-import Navbar from "./components/bars/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import LoginPage from "./components/login/loginPage";
 import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
@@ -19,14 +19,19 @@ function App() {
       <Route path="/Exercises" element={<SearchExercises />} />
     </Routes>*/
 
-    <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+    //<Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+    <div className="App">
+      <div className="gradient__bg"></div>
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/workout_preset" element={<WorkoutPresetMain />} />
       </Routes>
-    </Box>
+    </div>
+    //</Box>
   );
 }
 
