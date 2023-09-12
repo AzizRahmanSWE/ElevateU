@@ -34,7 +34,7 @@ const HeroBanner = () => {
         <Link
           //underline="none"
           component={RouterLink}
-          to="/login"
+          to="/workout_preset"
           sx={{
             marginTop: "200px",
             textDecoration: "none",
@@ -53,7 +53,7 @@ const HeroBanner = () => {
           onMouseOver={(e) => (e.target.style.fontWeight = 1000)}
           onMouseOut={(e) => (e.target.style.fontWeight = 100)}
         >
-          Sign Up
+          Explore Our Sets
         </Link>
       </Grid>
       <Grid item xs={12} lg={8} mt={3}>
@@ -61,7 +61,7 @@ const HeroBanner = () => {
           src={Banner}
           alt="banner"
           className="banner-img"
-          style={{ width: "99%", height: "100%" }}
+          style={{ width: "100%", height: "100%" }}
         />
       </Grid>
     </Grid>
