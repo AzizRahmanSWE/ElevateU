@@ -29,7 +29,7 @@ const HeroBanner = () => {
           sx={{ fontSize: { lg: "44px", xs: "40px" } }}
         >
           Control, Strive <br />
-          <span style={{ color: "#5AFE73" }}>Elavate</span> Your Limit
+          <span style={{ color: "#5AFE73" }}>Elevate</span> Your Limit
         </Typography>
         <Link
           //underline="none"

@@ -50,7 +50,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         color="#F2F2F2"
         fontFamily="Open Sans"
       >
-        Awsome Exercises You <br /> Should Know
+        Awesome Exercises You <br /> Should Know
       </Typography>
 
       <Box position="relative" mb="72px" >
