@@ -4,10 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
 // components
-import Home from "./pages/Home";
-import ExerciseDetail from "./pages/ExerciseDetail";
-import Navbar from "./components/homePage/Navbar";
+import Navbar from "./components/bars/Navbar";
+import Home from "./components/home/Home";
 import LoginPage from "./components/login/loginPage";
+import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/exercise/:id" element={<ExerciseDetail />} />
+        <Route path="/workout_preset" element={<WorkoutPresetMain />} />
       </Routes>
     </Box>
   );

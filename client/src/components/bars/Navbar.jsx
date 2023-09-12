@@ -42,9 +42,8 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a
-          to="/workoutPresets"
-          href="exercises"
+        <Link
+          to="/workout_preset"
           style={{
             textDecoration: "none",
             fontFamily: "Open Sans",
@@ -56,10 +55,9 @@ const Navbar = () => {
           onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Workout Presets
-        </a>
-        <a
+        </Link>
+        <Link
           to="/login"
-          href="login"
           style={{
             textDecoration: "none",
             fontFamily: "Open Sans",
@@ -71,7 +69,7 @@ const Navbar = () => {
           onMouseOut={(e) => (e.target.style.borderBottom = "none")}
         >
           Log In
-        </a>
+        </Link>
       </Stack>
     </Stack>
   );
