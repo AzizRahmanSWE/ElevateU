@@ -47,7 +47,7 @@ app.get("/workout_preset/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const workoutPreset = await pool.query(
-      "SELECT * FROM preset_activities WHERE workout_preset_id = $1", [id]
+      "SELECT * FROM preset_activities JOIN workout_presets ON preset_activities.preset_activity_id = workout_presets.workout_preset_id JOIN activities ON preset_activities.activity_id = activities.activity_id WHERE workout_preset_id = $1", [id]
     );
     res.json(workoutPreset.rows[0])
   } catch (err) {
