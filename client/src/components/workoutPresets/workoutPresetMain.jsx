@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 
-import Footer from "../bars/Footer";
+import Footer from "../../containers/footer/Footer";
 import LongerBanner from "../../assets/images/longerBanner.png";
 
 const WorkoutPresetMain = () => {
