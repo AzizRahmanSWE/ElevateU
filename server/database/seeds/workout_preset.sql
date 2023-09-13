@@ -1,27 +1,7 @@
 INSERT INTO workout_presets (
   preset_name,
-  duration,
-  difficulty,
   description
-)
-
-VALUES (
-  'Basketball',
-  1,
-  'Medium',
-  'Improves your overall handles.'
-),
-
-(
-  'Strength Training',
-  1.5,
-  'Medium',
-  'Improves your overall Strength.'
-),
-
-(
-  'Weight Loss',
-  2,
-  'Medium',
-  'Improves your overall health and body.'
-)
+) VALUES 
+('Basketball', 'A comprehensive basketball training regimen spanning five days.'),
+('Strength Training', 'A workout preset focusing on muscle and strength gain.'),
+('Fat Loss', 'A workout preset focusing on cardio and fat loss.');

@@ -1,10 +1,15 @@
 -- CREATE DATABASE elevateu;
 
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS activities CASCADE;
-DROP TABLE IF EXISTS daily_logs CASCADE;
-DROP TABLE IF EXISTS workout_presets CASCADE;
 DROP TABLE IF EXISTS preset_activities CASCADE;
+DROP TABLE IF EXISTS preset_days CASCADE;
+DROP TABLE IF EXISTS days CASCADE;
+DROP TABLE IF EXISTS workout_presets CASCADE;
+DROP TABLE IF EXISTS exercise_demos CASCADE;
+DROP TABLE IF EXISTS notifications CASCADE;
+DROP TABLE IF EXISTS daily_logs CASCADE;
+DROP TABLE IF EXISTS activities CASCADE;
+-- DROP TABLE IF EXISTS goals CASCADE;
+-- DROP TABLE IF EXISTS users CASCADE;
 
 
 CREATE TABLE users (
@@ -22,9 +27,8 @@ CREATE TABLE users (
 CREATE TABLE activities (
   activity_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  type VARCHAR(255),
-  targeted_muscle VARCHAR(50),
-  calories_burned_per_minute FLOAT
+  description TEXT,
+  targeted_muscle VARCHAR(50)
 );
 
 CREATE TABLE daily_logs ( 
@@ -58,22 +62,32 @@ CREATE TABLE goals (
   status VARCHAR(50)
 );
 
+--workout_presets Table: This table holds the different workout presets like Basketball, Strength Training, Fat Loss, etc.--
 CREATE TABLE workout_presets (
   workout_preset_id SERIAL PRIMARY KEY,
   preset_name VARCHAR(255) NOT NULL,
-  duration INTEGER,
-  difficulty VARCHAR(50),
-  description VARCHAR(255)
+  description TEXT
+);
+
+--days Table: This table represents each day of the workout.--
+CREATE TABLE days (
+  day_id SERIAL PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(225)
+);
+
+--preset_days Table: This table links the workout presets to specific days. This way, each preset can have a customized set of days.-
+CREATE TABLE preset_days (
+  preset_day_id SERIAL PRIMARY KEY,
+  workout_preset_id INTEGER REFERENCES workout_presets(workout_preset_id),
+  day_id INTEGER REFERENCES days(day_id)
 );
 
 CREATE TABLE preset_activities (
   preset_activity_id SERIAL PRIMARY KEY,
-  workout_preset_id INTEGER REFERENCES workout_presets(workout_preset_id),
+  preset_day_id INTEGER REFERENCES preset_days(preset_day_id),
   activity_id INTEGER REFERENCES activities(activity_id),
-  day VARCHAR(10) NOT NULL,
-  sets INTEGER,
-  reps INTEGER,
-  duration FLOAT
+  display_order INTEGER NOT NULL
 );
 
 -- ########### RD ############################
