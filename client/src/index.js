@@ -9,6 +9,6 @@ import AppNew from "./AppNew";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <AppNew />
+    <App />
   </BrowserRouter>
 );
