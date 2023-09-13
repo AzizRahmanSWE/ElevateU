@@ -75,3 +75,36 @@ CREATE TABLE preset_activities (
   reps INTEGER,
   duration FLOAT
 );
+
+-- ########### RD ############################
+-- DAYS - table
+-- id
+-- name
+-- desc 
+
+-- 1   Monday  FirstDay      2   Tuesday   Secondday
+
+-- PresetActivities - table
+-- id
+-- days_id
+-- activity_desc
+-- display_order 
+
+-- 1 - pK
+-- 1 - Day_id
+-- Do a bench set
+-- 1
+
+-- 2
+-- 1
+-- Do a cardio 
+-- 2
+
+-- 3
+-- 1
+-- Play badminton
+-- 3
+-- Select Query where day_id = 1 ()
+-- ##########################################
+
+-- create days table based upon day id we can put our activities upon that table.

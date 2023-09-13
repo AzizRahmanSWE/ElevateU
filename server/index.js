@@ -11,7 +11,9 @@ app.use(express.json()); // gives access to req.body (request.body) to get json 
 
 // ROUTES
 
-// goals routes
+// create a workoutPreset
+
+
 // create a goal
 app.post("/goals", async (req, res) => {
   try {
@@ -28,6 +30,8 @@ app.post("/goals", async (req, res) => {
   }
 });
 
+// get all workoutPreset
+
 // get all goals
 app.get("/goals", async (req, res) => {
   try {
@@ -42,12 +46,12 @@ app.get("/goals", async (req, res) => {
 });
 
 
-// get workoutPreset
+// get a single workoutPreset
 app.get("/workout_preset/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const workoutPreset = await pool.query(
-      "SELECT * FROM preset_activities JOIN workout_presets ON preset_activities.preset_activity_id = workout_presets.workout_preset_id JOIN activities ON preset_activities.activity_id = activities.activity_id WHERE workout_preset_id = $1", [id]
+      "SELECT * FROM preset_activities WHERE workout_preset_id = $1", [id]
     );
     res.json(workoutPreset.rows[0])
   } catch (err) {
@@ -68,6 +72,9 @@ app.get("/goals/:id", async (req, res) => {
   }
 });
 
+// update a workoutPreset
+
+
 // update a goal
 app.put("/goals/:id", async (req, res) => {
   try {
@@ -83,6 +90,9 @@ app.put("/goals/:id", async (req, res) => {
     console.error(err.message)
   }
 });
+
+// delete a workoutPreset
+
 
 // delete a goal
 app.delete("/goals/:id", async (req, res) => {
