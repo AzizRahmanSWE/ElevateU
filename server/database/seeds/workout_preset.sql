@@ -4,6 +4,7 @@ INSERT INTO workout_presets (
   difficulty,
   description
 )
+
 VALUES (
   'Basketball',
   1,
