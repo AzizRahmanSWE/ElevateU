@@ -1,37 +1,19 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 
-import Footer from "../../containers/footer/Footer";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 import LongerBanner from "../../assets/images/longerBanner.png";
 
 const WorkoutPresetMain = () => {
   return (
     <Box>
-      <Grid item xs={12} lg={2} mt={3}>
-        <img
-          src={LongerBanner}
-          alt="LongerBanner"
-          className="banner-img"
-          style={{ width: "100%", height: "100%" }}
-        />
-      </Grid>
-      <Grid item xs={12} lg={2} mt={3}>
-        <img
-          src={LongerBanner}
-          alt="LongerBanner"
-          className="banner-img"
-          style={{ width: "100%", height: "100%" }}
-        />
-      </Grid>
-      <Grid item xs={12} lg={2} mt={3}>
-        <img
-          src={LongerBanner}
-          alt="LongerBanner"
-          className="banner-img"
-          style={{ width: "100%", height: "100%" }}
-        />
-      </Grid>
-      <Footer />
+      <div className="App">
+        <div className="gradient__bg">
+          <Navbar />
+          <Footer />
+        </div>
+      </div>
     </Box>
   );
 };

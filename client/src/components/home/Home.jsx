@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 
 import Exercises from "../exerciseDemos/Exercises";
+import Navbar from "../navbar/Navbar";
 import SearchExercises from "../exerciseDemos/SearchExercises";
 import HeroBanner from "./HeroBanner";
-import Footer from "../../containers/footer/Footer";
+import Footer from "../footer/Footer";
 
 const Home = () => {
   const [bodyPart, setBodyPart] = useState("all");
@@ -13,17 +14,22 @@ const Home = () => {
   // console.log(bodyPart)
   return (
     <Box>
-      <HeroBanner />
-      <SearchExercises
-        setExercises={setExercises}
-        bodyPart={bodyPart}
-        setBodyPart={setBodyPart}
-      />
-      <Exercises
+      <div className="App">
+        <div className="gradient__bg">
+          <Navbar />
+          <HeroBanner />
+          <SearchExercises
+            setExercises={setExercises}
+            bodyPart={bodyPart}
+            setBodyPart={setBodyPart}
+          />
+          {/*<Exercises
         exercises={exercises}
         setExercises={setExercises}
         bodyPart={bodyPart}
-      />
+  />*/}
+        </div>
+      </div>
       <Footer />
     </Box>
   );
