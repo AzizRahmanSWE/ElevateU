@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 // components
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
-import LoginPage from "./components/login/loginPage";
+import LoginPage from "./components/login(na)/loginPage";
 import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
 
 function App() {
