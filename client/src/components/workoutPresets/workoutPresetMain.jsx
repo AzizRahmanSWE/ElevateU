@@ -1,11 +1,21 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 
-import Footer from "../../containers/footer/Footer";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 import LongerBanner from "../../assets/images/longerBanner.png";
 
 const WorkoutPresetMain = () => {
-  return <Box>Workout Preset</Box>;
+  return (
+    <Box>
+      <div className="App">
+        <div className="gradient__bg">
+          <Navbar />
+          <Footer />
+        </div>
+      </div>
+    </Box>
+  );
 };
 
 export default WorkoutPresetMain;
