@@ -11,7 +11,7 @@ INSERT INTO activities (
 ('Barbell Curl', 'Bicep exercise using a barbell.', 'Biceps'),
 ('Cable Crossover', 'Chest exercise using cables.', 'Chest'),
 
--- 
+-- FAT LOSS --
 ('Running', 'Cardio exercise for fat loss.', 'Cardio'),
 ('Dribbling Drills', 'Improve ball handling.', 'Coordination'),
 ('Shooting Practice', 'Improve shooting form and accuracy.', 'Arms, Legs'),
