@@ -2,7 +2,7 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Typography, Link, Grid } from "@mui/material";
 
-import Banner from "../../assets/images/Banner.png";
+import Banner from "../../assets/images/NewBanner.png";
 
 const HeroBanner = () => {
   return (
@@ -13,20 +13,17 @@ const HeroBanner = () => {
       direction="row"
       mt={2}
       mx={1}
-      /*sx={{
-        mt: { lg: "212px", xs: "70px" },
-        ml: { sm: "50px" },
-      }}*/
       position="relative"
       p="20px"
     >
-      <Grid item xs={12} lg={4}>
+      <Grid item xs={12} lg={4} ml={7}>
         <Typography
           variant="h4"
           color="#F2F2F2"
           fontWeight={700}
           fontFamily="Open Sans"
           sx={{ fontSize: { lg: "44px", xs: "40px" } }}
+          mb="23px"
         >
           Control, Strive <br />
           <span style={{ color: "#5AFE73" }}>Elevate</span> Your Limit
@@ -56,7 +53,7 @@ const HeroBanner = () => {
           Explore Our Sets
         </Link>
       </Grid>
-      <Grid item xs={12} lg={8} mt={3}>
+      <Grid item xs={12} lg={7} mt={3}>
         <img
           src={Banner}
           alt="banner"

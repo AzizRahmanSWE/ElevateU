@@ -1,7 +1,8 @@
 body {
   font-family: "Josefin Sans";
   /* background-color: #040404; */
-  background-image: linear-gradient(to right, black, grey);
+  /*background-image: linear-gradient(to right, black, grey);*/
+  background: var(--color-bg);
 }
 
 * {
@@ -14,6 +15,42 @@ body {
   width: 0px;
 }
 
+.gradient__bg {
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 25%
+  );
+}
+
 .right-arrow,
 .left-arrow {
   cursor: pointer;
@@ -23,7 +60,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ff2625;
   font-size: 25px;
   border-radius: 4px;
   position: absolute;
@@ -92,8 +128,8 @@ body {
 }
 
 .search-btn:hover {
-  color: #ff2625 !important;
-  border: 1px solid #ff2625 !important;
+  color: #040404 !important;
+  border: 5px solid #5afe73 !important;
 }
 
 .exercise-video {
