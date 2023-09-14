@@ -5,9 +5,12 @@ import { Box } from "@mui/material";
 
 // components
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
-//import LoginPage from "./components/login(na)/loginPage";
 import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
+import ExerciseDetail from "./components/exercisesDetail/ExerciseDetail";
+
+//import LoginPage from "./components/login(na)/loginPage";
 
 function App() {
   return (
@@ -21,10 +24,17 @@ function App() {
     </Routes>*/
 
     <Box width="400px" sx={{ width: { xl: "auto" } }} m="auto">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/workout_preset" element={<WorkoutPresetMain />} />
-      </Routes>
+      <div className="App">
+        <div className="gradient__bg">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/exercise/:id" element={<ExerciseDetail />} />
+            <Route path="/workout_preset" element={<WorkoutPresetMain />} />
+          </Routes>
+        </div>
+      </div>
+      <Footer />
     </Box>
   );
 }

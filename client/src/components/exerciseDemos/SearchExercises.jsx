@@ -9,7 +9,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
 
-  // contains empty dependency array.
   useEffect(() => {
     const fetchExercisesData = async () => {
       const bodyPartsData = await fetchData(
@@ -19,26 +18,27 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
       setBodyParts(["all", ...bodyPartsData]);
     };
-    // called when the app loads.
+
     fetchExercisesData();
   }, []);
 
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+        "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
 
-      console.log(exercisesData);
       const searchedExercises = exercisesData.filter(
-        (exercise) =>
-          exercise.name.toLowerCase().includes(search) ||
-          exercise.target.toLowerCase().includes(search) ||
-          exercise.equipment.toLowerCase().includes(search) ||
-          exercise.bodyPart.toLowerCase().includes(search)
+        (item) =>
+          item.name.toLowerCase().includes(search) ||
+          item.target.toLowerCase().includes(search) ||
+          item.equipment.toLowerCase().includes(search) ||
+          item.bodyPart.toLowerCase().includes(search)
       );
-      // after search clear searchData.
+
+      window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
+
       setSearch("");
       setExercises(searchedExercises);
     }

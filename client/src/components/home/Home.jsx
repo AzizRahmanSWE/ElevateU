@@ -2,35 +2,27 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 
 import Exercises from "../exerciseDemos/Exercises";
-import Navbar from "../navbar/Navbar";
 import SearchExercises from "../exerciseDemos/SearchExercises";
 import HeroBanner from "./HeroBanner";
-import Footer from "../footer/Footer";
 
 const Home = () => {
-  const [bodyPart, setBodyPart] = useState("all");
   const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyPart] = useState("all");
 
   // console.log(bodyPart)
   return (
     <Box>
-      <div className="App">
-        <div className="gradient__bg">
-          <Navbar />
-          <HeroBanner />
-          <SearchExercises
-            setExercises={setExercises}
-            bodyPart={bodyPart}
-            setBodyPart={setBodyPart}
-          />
-          {/*<Exercises
-        exercises={exercises}
+      <HeroBanner />
+      <SearchExercises
         setExercises={setExercises}
         bodyPart={bodyPart}
-  />*/}
-        </div>
-      </div>
-      <Footer />
+        setBodyPart={setBodyPart}
+      />
+      <Exercises
+        setExercises={setExercises}
+        exercises={exercises}
+        bodyPart={bodyPart}
+      />
     </Box>
   );
 };
