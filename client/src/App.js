@@ -9,7 +9,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 //import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
 import ExerciseDetail from "./components/exercisesDetail/ExerciseDetail";
-
+import PresetPage from "./components/workoutPlan/PresetPage";
 //import LoginPage from "./components/login(na)/loginPage";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/exercise/:id" element={<ExerciseDetail />} />
-            {/* <Route path="/workout_preset" element={<WorkoutPresetMain />} /> */}
+            <Route path="/workout_presets" element={<PresetPage />} />
           </Routes>
         </div>
       </div>

@@ -43,6 +43,26 @@ app.get("/workout_preset", async (req, res) => {
   }
 });
 
+
+// get all workout presets
+app.get("/workout_preset", async (req, res) => {
+  try {
+    const { name } = req.params;
+    const workoutPreset = await pool.query(
+      "SELECT preset_name FROM workout_presets;", [name]
+    );
+    
+    // check if preset exists.
+    if (workoutPreset.rows.length === 0) {
+      return res.status(404).json("Workout preset not found!")
+    }
+    res.json(workoutPreset.rows[0]);
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send("Server Error");
+  }
+});
+
 // get all goals
 app.get("/goals", async (req, res) => {
   try {
@@ -61,15 +81,34 @@ app.get("/goals", async (req, res) => {
 app.get("/workout_preset/:workout_preset_id", async (req, res) => {
   try {
     const { workout_preset_id } = req.params;
+
     const workoutPreset = await pool.query(
-      "SELECT a.activity_id, a.name AS activity_name, a.description AS activity_description, a.targeted_muscle, d.name AS day_name FROM preset_activities AS pa JOIN activities AS a ON pa.activity_id = a.activity_id JOIN preset_days AS pd ON pa.preset_day_id = pd.preset_day_id JOIN days AS d ON pd.day_id = d.day_id WHERE pd.workout_preset_id = $1 ORDER BY a.activity_id ASC;", [workout_preset_id]
+      `SELECT 
+        a.activity_id, 
+        a.name AS activity_name, 
+        a.description AS activity_description, 
+        a.targeted_muscle, 
+        d.name AS day_name, 
+        wp.preset_name AS workout_preset_name 
+      FROM 
+        preset_activities AS pa 
+      JOIN activities AS a ON pa.activity_id = a.activity_id 
+      JOIN preset_days AS pd ON pa.preset_day_id = pd.preset_day_id 
+      JOIN days AS d ON pd.day_id = d.day_id 
+      JOIN workout_presets AS wp ON pa.workout_preset_id = wp.workout_preset_id 
+      WHERE 
+        pa.workout_preset_id = $1 
+      ORDER BY 
+        pa.display_order ASC, 
+        a.activity_id ASC;`,
+      [workout_preset_id]
     );
     
     // check if preset exists.
     if (workoutPreset.rows.length === 0) {
       return res.status(404).json("Workout preset not found!")
     }
-    res.json(workoutPreset.rows[0]);
+    res.json(workoutPreset.rows);
   } catch (err) {
     console.error(err.message)
     res.status(500).send("Server Error");
