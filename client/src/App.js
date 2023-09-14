@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
-import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
+//import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
 import ExerciseDetail from "./components/exercisesDetail/ExerciseDetail";
 
 //import LoginPage from "./components/login(na)/loginPage";
@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/exercise/:id" element={<ExerciseDetail />} />
-            <Route path="/workout_preset" element={<WorkoutPresetMain />} />
+            {/* <Route path="/workout_preset" element={<WorkoutPresetMain />} /> */}
           </Routes>
         </div>
       </div>
