@@ -11,6 +11,7 @@ app.use(express.json()); // gives access to req.body (request.body) to get json 
 
 // ROUTES
 
+
 // create a workoutPreset
 
 
@@ -31,6 +32,16 @@ app.post("/goals", async (req, res) => {
 });
 
 // get all workoutPreset
+app.get("/workout_preset", async (req, res) => {
+  try {
+    const allPresets = await pool.query(
+      "SELECT * FROM workout_presets"
+    )
+    res.json(allPresets.rows)
+  } catch (err) {
+    console.error(err.message)
+  }
+});
 
 // get all goals
 app.get("/goals", async (req, res) => {
@@ -46,16 +57,22 @@ app.get("/goals", async (req, res) => {
 });
 
 
-// get a single workoutPreset
-app.get("/workout_preset/:id", async (req, res) => {
+// get a single workoutPreset (e.g., basketball, Strength Training, Fat Loss)
+app.get("/workout_preset/:workout_preset_id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const { workout_preset_id } = req.params;
     const workoutPreset = await pool.query(
-      "SELECT * FROM preset_activities WHERE workout_preset_id = $1", [id]
+      "SELECT a.activity_id, a.name AS activity_name, a.description AS activity_description, a.targeted_muscle, d.name AS day_name FROM preset_activities AS pa JOIN activities AS a ON pa.activity_id = a.activity_id JOIN preset_days AS pd ON pa.preset_day_id = pd.preset_day_id JOIN days AS d ON pd.day_id = d.day_id WHERE pd.workout_preset_id = $1 ORDER BY a.activity_id ASC;", [workout_preset_id]
     );
-    res.json(workoutPreset.rows[0])
+    
+    // check if preset exists.
+    if (workoutPreset.rows.length === 0) {
+      return res.status(404).json("Workout preset not found!")
+    }
+    res.json(workoutPreset.rows[0]);
   } catch (err) {
     console.error(err.message)
+    res.status(500).send("Server Error");
   }
 });
 

@@ -20,10 +20,10 @@ const Navbar = () => {
           src={Logo}
           alt="logo"
           style={{
-            width: "150px",
-            height: "60px",
+            width: "200px",
+            height: "70px",
             marginTop: "25px",
-            marginLeft: "20px",
+            marginLeft: "100px",
             marginRight: "15px",
           }}
         />
@@ -33,9 +33,7 @@ const Navbar = () => {
           to="/"
           style={{
             textDecoration: "none",
-            fontFamily: "Open Sans",
             color: "#F2F2F2",
-            borderBottom: "3px solid #FF2625",
           }}
           onMouseOver={(e) => (
             (e.target.style.fontWeight = 1000),
@@ -50,11 +48,10 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <Link
-          to="/workout_preset"
+        <a
+          href="#exercises"
           style={{
             textDecoration: "none",
-            fontFamily: "Open Sans",
             color: "#F2F2F2",
           }}
           onMouseOver={(e) => (
@@ -68,22 +65,8 @@ const Navbar = () => {
             (e.target.style.borderBottom = "none")
           )}
         >
-          Workout Presets
-        </Link>
-        {/*<Link
-          to="/login"
-          style={{
-            textDecoration: "none",
-            fontFamily: "Open Sans",
-            color: "#F2F2F2",
-          }}
-          onMouseOver={(e) =>
-            (e.target.style.borderBottom = "2px inset #CDCDCD")
-          }
-          onMouseOut={(e) => (e.target.style.borderBottom = "none")}
-        >
-          Log In
-        </Link>*/}
+          Exercises
+        </a>
       </Stack>
     </Stack>
   );

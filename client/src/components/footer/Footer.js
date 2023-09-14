@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Stack, Box, Typography } from "@mui/material";
 import Logo from "../../assets/images/NewLogo.png";
 
@@ -11,7 +12,9 @@ const Footer = () => (
       px="20px"
       pt="44px"
     >
-      <img src={Logo} alt="logo" style={{ width: "200px", height: "70px" }} />
+      <a href="#top">
+        <img src={Logo} alt="logo" style={{ width: "200px", height: "70px" }} />
+      </a>
     </Stack>
     <Typography
       variant="h4"
@@ -21,7 +24,7 @@ const Footer = () => (
       pb="10px"
       color="#F2F2F2"
       fontWeight={200}
-      fontFamily="Open Sans"
+      mr="40px"
     >
       Designed by Jeremy Lee, Aziz Rahman, Tony Tran
     </Typography>
