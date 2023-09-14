@@ -8,7 +8,7 @@ import ExerciseCard from "./ExerciseCard";
 
 const Exercises = ({ exercises = [], setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const exercisesPerPage = 9;
+  const exercisesPerPage = 8;
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
@@ -46,13 +46,13 @@ const Exercises = ({ exercises = [], setExercises, bodyPart }) => {
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography
         variant="h3"
-        mb="46px"
+        mb="30px"
         ml={4}
         color="#F2F2F2"
-        fontWeight={700}
-        fontFamily="Open Sans"
+        fontWeight={600}
       >
-        Exercises that <span style={{ color: "#5AFE73" }}>Elevate</span> You
+        Exercises that Will<span style={{ color: "#5AFE73" }}> Elevate</span>{" "}
+        You
       </Typography>
 
       <Stack
@@ -69,7 +69,7 @@ const Exercises = ({ exercises = [], setExercises, bodyPart }) => {
       <Stack mt="100px" alignItems="center">
         {exercises.length > 9 && (
           <Pagination
-            color="primary"
+            color="success"
             shape="rounded"
             variant="outlined"
             defaultPage={1}

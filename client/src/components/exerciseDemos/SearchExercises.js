@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import Pagination from "@mui/material/Pagination";
 
 import { fetchData, exerciseOptions } from "../../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
@@ -52,7 +51,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         mb="49px"
         textAlign="center"
         color="#F2F2F2"
-        fontFamily="Open Sans"
       >
         Awesome <span style={{ color: "#5AFE73" }}>Exercises</span> You <br />{" "}
         Should Know
@@ -62,7 +60,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         <TextField
           height="76px"
           sx={{
-            input: { fontWeight: "700", border: "none", borderRadius: "4px" },
+            input: {
+              fontWeight: "700",
+              border: "none",
+              borderRadius: "0px",
+              borderColor: "#5AFE73",
+            },
             width: { lg: "700px", xs: "350px" },
             backgroundColor: "#F2F2F2",
             borderRadius: "10px",
@@ -79,7 +82,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             color: "#fff",
             fontWeight: "1000",
             textTransform: "none",
-            width: { lg: "173px", xs: "80px" },
+            width: { lg: "143px", xs: "80px" },
             fontSize: { lg: "20px", xs: "14px" },
             height: "56px",
             borderRadius: "10px",
@@ -96,6 +99,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
+          isBodyParts
         />
       </Box>
     </Stack>

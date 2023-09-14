@@ -8,7 +8,7 @@ const ExerciseCard = ({ exercise }) => {
       className="exercise.card exercise-card"
       to={`/exercise/${exercise.id}`}
     >
-      <img src={exercise.gifUrl} alt={exercise.name} Loading="lazy" />
+      <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
 
       <Stack direction="row">
         <Button
@@ -16,9 +16,8 @@ const ExerciseCard = ({ exercise }) => {
             ml: "21px",
             color: "#fff",
             background: "#FC93AD",
-            fontSize: "17px",
-            fontFamily: "Open Sans",
-            fontWeight: 100,
+            fontSize: "19px",
+            fontWeight: 200,
             borderRadius: "30px",
             textTransform: "capitalize",
             textDecoration: "none",
@@ -33,8 +32,8 @@ const ExerciseCard = ({ exercise }) => {
             ml: "21px",
             color: "#fff",
             background: "#32D3D8",
-            fontSize: "17px",
-            fontFamily: "Open Sans",
+            fontSize: "19px",
+            fontWeight: 200,
             borderRadius: "30px",
             textTransform: "capitalize",
           }}
@@ -49,18 +48,16 @@ const ExerciseCard = ({ exercise }) => {
         color="black"
         fontWeight={700}
         sx={{
-          fontSize: { lg: "15px", xs: "15px" },
+          fontSize: { lg: "20px", xs: "19px" },
         }}
         mt="11px"
         pb="10px"
         textTransform="capitalize"
-        fontSize="22px"
-        fontFamily="Open Sans"
         onMouseOver={(e) => (
           (e.target.style.fontWeight = 1000), (e.target.style.color = "#5AFE73")
         )}
         onMouseOut={(e) => (
-          (e.target.style.fontWeight = "bold"), (e.target.style.color = "Black")
+          (e.target.style.fontWeight = 500), (e.target.style.color = "black")
         )}
       >
         {exercise.name}

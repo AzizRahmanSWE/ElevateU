@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Erica+One&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 body {
-  font-family: "Open Sans";
+  font-family: "Manrope";
   background: var(--color-bg);
 }
 
@@ -89,6 +89,10 @@ body {
   height: 742px;
 }
 
+.explore-button {
+  text-decoration: none;
+}
+
 .hero-banner-img {
   position: absolute;
   right: 40px;
@@ -100,7 +104,7 @@ body {
 
 .exercise-card {
   width: 400px;
-  height: 445px;
+  height: 470px;
   background: #fff;
   border-top: 10px solid #5afe73;
   border-bottom-left-radius: 20px;
@@ -129,7 +133,7 @@ body {
 }
 
 .search-btn:hover {
-  color: #040404 !important;
+  color: #5afe73 !important;
   border: 5px solid #5afe73 !important;
 }
 

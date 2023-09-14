@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 
-import Icon from "../../assets/icons/gym.png";
+import Icon from "../../assets/icons/New_Icon.png";
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
@@ -15,9 +15,10 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         backgroundColor: "transparent",
         borderBottomLeftRadius: "20px",
         width: "250px",
-        height: "200px",
+        height: "250px",
         cursor: "pointer",
-        gap: "47px",
+        gap: "45px",
+        mt: "20px",
       }}
       onClick={() => {
         setBodyPart(item);
@@ -26,12 +27,11 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
     >
       <img
         src={Icon}
-        alt="dumbbell"
-        style={{ width: "150px", height: "40px" }}
+        alt="dumbell"
+        style={{ width: "150px", height: "100px" }}
       />
       <Typography
         fontSize="25px"
-        fontFamily="Open Sans"
         fontWeight="bold"
         color="#F2F2F2"
         textTransform="capitalize"
@@ -39,7 +39,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
           (e.target.style.fontWeight = 1000), (e.target.style.color = "#5AFE73")
         )}
         onMouseOut={(e) => (
-          (e.target.style.fontWeight = 500), (e.target.style.color = "#F2F2F2")
+          (e.target.style.fontWeight = "bold"), (e.target.style.color = "#F2F2F2")
         )}
       >
         {item}
