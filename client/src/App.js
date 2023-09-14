@@ -10,6 +10,8 @@ import Home from "./components/home/Home";
 //import WorkoutPresetMain from "./components/workoutPresets/workoutPresetMain";
 import ExerciseDetail from "./components/exercisesDetail/ExerciseDetail";
 import PresetPage from "./components/workoutPlan/PresetPage";
+import WorkoutPresetPage from "./components/workoutPlan/WorkoutPresetPage";
+
 //import LoginPage from "./components/login(na)/loginPage";
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/exercise/:id" element={<ExerciseDetail />} />
             <Route path="/workout_presets" element={<PresetPage />} />
+            <Route path="/workout_preset/:id" element={<WorkoutPresetPage />} />
           </Routes>
         </div>
       </div>
