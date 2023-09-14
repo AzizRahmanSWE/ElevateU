@@ -85,40 +85,8 @@ CREATE TABLE preset_days (
 
 CREATE TABLE preset_activities (
   preset_activity_id SERIAL PRIMARY KEY,
+  workout_preset_id INTEGER REFERENCES workout_presets(workout_preset_id),
   preset_day_id INTEGER REFERENCES preset_days(preset_day_id),
   activity_id INTEGER REFERENCES activities(activity_id),
   display_order INTEGER NOT NULL
 );
-
--- ########### RD ############################
--- DAYS - table
--- id
--- name
--- desc 
-
--- 1   Monday  FirstDay      2   Tuesday   Secondday
-
--- PresetActivities - table
--- id
--- days_id
--- activity_desc
--- display_order 
-
--- 1 - pK
--- 1 - Day_id
--- Do a bench set
--- 1
-
--- 2
--- 1
--- Do a cardio 
--- 2
-
--- 3
--- 1
--- Play badminton
--- 3
--- Select Query where day_id = 1 ()
--- ##########################################
-
--- create days table based upon day id we can put our activities upon that table.
