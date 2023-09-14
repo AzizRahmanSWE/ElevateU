@@ -99,7 +99,6 @@ app.get("/workout_preset/:workout_preset_id", async (req, res) => {
       WHERE 
         pa.workout_preset_id = $1 
       ORDER BY 
-        pa.display_order ASC, 
         a.activity_id ASC;`,
       [workout_preset_id]
     );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { Box, Stack } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 import BasketballImg from "../../assets/images/basketball.png";
@@ -10,6 +10,7 @@ import FatLossImg from "../../assets/images/fat-loss.png";
 
 
 const ListWorkoutPresets = () => {
+  const { id: dayPresetId } = useParams();
   const [preset, setPreset] = useState([]);
 
   const presetImages = {
@@ -30,7 +31,7 @@ const ListWorkoutPresets = () => {
 
   useEffect(() => {
     getWorkoutPresets();
-  }, []);
+  }, [dayPresetId]);
 
   return (
     <Box>
@@ -41,19 +42,22 @@ const ListWorkoutPresets = () => {
           <thead>
             <tr>
               {preset.map((p) => (
-                <th key={p.workout_preset_id}>{p.preset_name}</th>
+                <th key={p.workout_preset_id}></th>
               ))}
             </tr>
           </thead>
           <tbody>
             <tr>
               {preset.map((p) => (
-                <td key={p.workout_preset_id}>
-                  {p.description}
+                <th key={p.workout_preset_id}>
+                  <Link to={`/workout_preset/${p.workout_preset_id}`}>
+                    <th>{p.preset_name}</th>
+                  </Link>
+                  <th>{p.description}</th>
                   <br />
                   <img src={presetImages[p.preset_name]} alt="p.preset_name"
                     style={{ borderRadius: '20px' , width: '450px', height: '500px', marginTop: "40px" }}/>
-                  </td>
+                </th>
               ))}
             </tr>
           </tbody>
