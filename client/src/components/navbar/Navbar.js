@@ -48,25 +48,6 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a
-          href="#exercises"
-          style={{
-            textDecoration: "none",
-            color: "#F2F2F2",
-          }}
-          onMouseOver={(e) => (
-            (e.target.style.fontWeight = 1000),
-            (e.target.style.color = "#5AFE73"),
-            (e.target.style.borderBottom = "3px solid #CDCDCD")
-          )}
-          onMouseOut={(e) => (
-            (e.target.style.fontWeight = 500),
-            (e.target.style.color = "#F2F2F2"),
-            (e.target.style.borderBottom = "none")
-          )}
-        >
-          Exercises
-        </a>
         <Link
           to="/workout_presets"
           style={{

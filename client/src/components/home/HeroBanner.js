@@ -25,7 +25,8 @@ const HeroBanner = () => {
           mb="23px"
         >
           Control, Strive <br />
-          <span style={{ color: "#5AFE73" }}>Elevate</span> Your Limit
+          <span style={{ color: "#5AFE73" }}>Elevate </span>Your
+          <span style={{ color: "#FC93AD" }}> Limit</span>
         </Typography>
         <a className="explore-button" href="#exercises">
           <Link
@@ -49,6 +50,29 @@ const HeroBanner = () => {
             Explore & Elevate
           </Link>
         </a>
+        <Link
+          component={RouterLink}
+          to="/workout_presets"
+          sx={{
+            marginTop: "200px",
+            marginLeft: "15px",
+            textDecoration: "none",
+            textAlign: "center",
+            border: "3px groove #FC93AD",
+            background: "transparent",
+            padding: "7px",
+            textTransform: "none",
+            borderRadius: "200px",
+            fontSize: { lg: "15px", xs: "10px" },
+          }}
+          color="#F2F2F2"
+          fontWeight={500}
+          fontFamily="manrope"
+          onMouseOver={(e) => (e.target.style.fontWeight = 1000)}
+          onMouseOut={(e) => (e.target.style.fontWeight = 500)}
+        >
+          Our Presets
+        </Link>
       </Grid>
       <Grid item xs={12} lg={7} mt={3}>
         <img

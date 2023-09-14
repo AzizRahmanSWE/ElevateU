@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
+
 import { Box, Stack, Typography } from "@mui/material";
 
 // util funtions
@@ -69,6 +70,7 @@ const Exercises = ({ exercises = [], setExercises, bodyPart }) => {
       <Stack mt="100px" alignItems="center">
         {exercises.length > 9 && (
           <Pagination
+            className="pagination"
             color="success"
             shape="rounded"
             variant="outlined"
