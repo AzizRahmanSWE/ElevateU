@@ -95,5 +95,5 @@ INSERT INTO preset_activities (
 (3, 3, 63, 3),  -- FAT LOSS Training on Wednesday - 3rd activity: 
 (3, 4, 64, 4),  -- FAT LOSS Training on Thursday - 4th activity: 
 (3, 5, 65, 5),  -- FAT LOSS Training on Friday - 5th activity: 
-(3, 6, 66, 6),  -- FAT LOSS Training on Friday - 5th activity: 
-(3, 7, 67, 7);  -- FAT LOSS Training on Friday - 5th activity: 
+(3, 6, 66, 6),  -- FAT LOSS Training on Friday - 6th activity: 
+(3, 7, 67, 7);  -- FAT LOSS Training on Friday - 7th activity: 
